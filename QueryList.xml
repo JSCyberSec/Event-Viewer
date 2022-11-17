@@ -1,15 +1,21 @@
 <QueryList>
   <!--Defaults -->
   <Query Id="0" Path="Security">
-    <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Windows\System32\whoami.exe']]))</Select>
-    <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Windows\System32\at.exe']]))</Select>
+    <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Windows\System32\whoami.exe']]) or (*[EventData[Data[@Name='NewProcessName']='C:\Windows\SysWOW64\whoami.exe']]))</Select>
+    <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Windows\System32\at.exe']]) or (*[EventData[Data[@Name='NewProcessName']='C:\Windows\SysWOW64\at.exe']]))</Select>
     <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Windows\System32\sc.exe']]))</Select>
-    <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Windows\System32\certutil.exe']]))</Select>
     <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Windows\System32\schtasks.exe']]))</Select>
-  </Query>
-  <!-- MSBuild Binaries -->
+    <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_1.11.2521.0_x64__8wekyb3d8bbwe\AppInstaller.exe']]))</Select>
+   </Query>
+  <!-- MSBuild Binaries 
+  https://lolbas-project.github.io/lolbas/Binaries/Msbuild/ -->
   <Query Id="1" Path="Security">
     <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Windows\Microsoft.NET\Framework\v2.0.50727\Msbuild.exe']]) or (*[EventData[Data[@Name='NewProcessName']='C:\Windows\Microsoft.NET\Framework64\v2.0.50727\Msbuild.exe']]) or (*[EventData[Data[@Name='NewProcessName']='C:\Program Files (x86)\MSBuild\14.0\bin\MSBuild.exe']]))</Select>
     <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Windows\Microsoft.NET\Framework\v3.5\Msbuild.exe']]) or (*[EventData[Data[@Name='NewProcessName']='C:\Windows\Microsoft.NET\Framework64\v3.5\Msbuild.exe']]) or (*[EventData[Data[@Name='NewProcessName']='C:\Windows\Microsoft.NET\Framework\v4.0.30319\Msbuild.exe']]) or (*[EventData[Data[@Name='NewProcessName']='C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Msbuild.exe']]))</Select>
+  </Query>
+  <!-- Certutil Binaries
+  https://lolbas-project.github.io/lolbas/Binaries/Certutil/ -->
+  <Query Id="2" Path="Security">
+      <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Windows\System32\certutil.exe']]) or (*[EventData[Data[@Name='NewProcessName']='C:\Windows\SysWOW64\certutil.exe']]))</Select>
   </Query>
 </QueryList>
