@@ -3,7 +3,8 @@
   <Query Id="0" Path="Security">
     <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Windows\System32\whoami.exe']]) or (*[EventData[Data[@Name='NewProcessName']='C:\Windows\SysWOW64\whoami.exe']]))</Select>
     <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Windows\System32\at.exe']]) or (*[EventData[Data[@Name='NewProcessName']='C:\Windows\SysWOW64\at.exe']]))</Select>
-    <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Windows\System32\sc.exe']]))</Select>
+    <!-- sc is started by legitimate processes, not a good candidate for auto termination. leverage SIEM monitoring or sysmon for better analytics.
+    <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Windows\System32\sc.exe']]))</Select> -->
     <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Windows\System32\schtasks.exe']]))</Select>
     <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_1.11.2521.0_x64__8wekyb3d8bbwe\AppInstaller.exe']]))</Select>
    </Query>
