@@ -5,8 +5,11 @@ This Repository relies on Windows event 4688 being generated.
 This can be accomplished by enabling it using a group or local policy. 
   - Computer Configuration > Policies > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Detailed Tracking
     - Audit Process Creation > Success
+    ![image](https://user-images.githubusercontent.com/118463933/202510786-f88fc6c5-4b24-4dc3-8ec8-511ba5c89847.png)
   - Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Security Options
     - Audit: Force Audit policy subcategory settings (Windows Vista or Later) to override audit policy category settings > Enabled
+    ![image](https://user-images.githubusercontent.com/118463933/202510490-adcecb51-6a80-4220-8732-1e6d11c8846e.png)
+
 
 ## Scheduled Tasks
 The scheduled task needs to be imported into the scheduled tasks repository on the Windows machine. This can either be manual or using powershell or the scheduled task command line.
