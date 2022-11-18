@@ -4,7 +4,7 @@ Windows Event Viewer tasks and scripts
 This task uses a script to perform a kill process on created processes and their parents for when certain commands/executables are called on a system.
 It's not a perfect system as my testing with "whoami.exe" still allows whoami to run but ultimately terminates the parent cmd window or explorer window (parent). Which if a malicious actor is using a process (word, notepad or other process) to execute their commands this will kill their current activity and force them to attempt regaining access to the system.
 
-This is in no way a replacemnent for an AV or such but it does supplement active defense solutions for free.
+This is in no way a replacement for an AV or such but it does supplement active defense solutions for free.
 
 This Repository relies on Windows event 4688 being generated.
 This can be accomplished by enabling it using a group or local policy. 
