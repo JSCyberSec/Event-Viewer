@@ -16,6 +16,9 @@ This can be accomplished by enabling it using a group or local policy.
     ![image](https://user-images.githubusercontent.com/118463933/202510490-adcecb51-6a80-4220-8732-1e6d11c8846e.png)
 
 
+## XML Query
+The Query xml is the file that you use to build up the trigger query for the event ID's (The scheduled task xml has it already inside but the formatting sucks to modify so I've got it separate for ease of modification). I've used a fair amount of web surfing to get the info around the XPath formatting for windows event viewer and will include the links as I go.
+
 ## Scheduled Tasks
 The scheduled task (Process Monitor.xml) needs to be imported into the scheduled tasks repository on the Windows machine. This can either be manual, using powershell, or the scheduled task command line.
 I'll update the procedure as I grow this repository.
