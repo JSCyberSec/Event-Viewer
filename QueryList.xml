@@ -19,4 +19,8 @@
   <Query Id="2" Path="Security">
       <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Windows\System32\certutil.exe']]) or (*[EventData[Data[@Name='NewProcessName']='C:\Windows\SysWOW64\certutil.exe']]))</Select>
   </Query>
+  <!-- Systeminfo Binary, typically used in discovery by TAs not commonly used in day to day operations. Experiment and track -->
+  <Query Id="3" Path="Security">
+      <Select Path="Security">*[System[EventID=4688]] and ((*[EventData[Data[@Name='NewProcessName']='C:\Windows\System32\systeminfo.exe']]) or (*[EventData[Data[@Name='NewProcessName']='C:\Windows\SysWOW64\systeminfo.exe']]))</Select>
+  </Query>
 </QueryList>
